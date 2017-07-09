@@ -176,7 +176,7 @@
 <li><code class="docutils literal"><span class="pre">Kernel::hasArg()</span></code> 检查参数是否存在，返回 <code class="docutils literal"><span class="pre">boolean</span></code> 值，存在返回 <code class="docutils literal"><span class="pre">true</span></code>, 否在 <code class="docutils literal"><span class="pre">false</span></code></li>
 </ol>
 <p>长参数用法,对于命令： <code class="docutils literal"><span class="pre">php</span> <span class="pre">index.php</span> <span class="pre">--with-foo=thevalue1</span>&#160; <span class="pre">--with-foo2=thevalue2</span> <span class="pre">--with-foo3</span></code></p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;--with-foo&#39;</span><span class="p">);</span> <span class="c1">// thevalue1</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;--with-foo2&#39;</span><span class="p">);</span> <span class="c1">// thevalue2</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;--with-foo3&#39;</span><span class="p">);</span> <span class="c1">// 空字符串</span>
@@ -184,7 +184,7 @@
 </pre></div>
 </div>
 <p>短参数用法,对于命令： <code class="docutils literal"><span class="pre">php</span> <span class="pre">index.php</span> <span class="pre">-a</span> <span class="pre">1</span> <span class="pre">-b</span> <span class="pre">2</span> <span class="pre">-c</span></code></p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;-a&#39;</span><span class="p">);</span> <span class="c1">// 1</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;-b&#39;</span><span class="p">);</span> <span class="c1">// 2</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">);</span> <span class="c1">// 空字符串</span>
@@ -192,7 +192,7 @@
 </pre></div>
 </div>
 <p>数字索引用法,对于命令 <code class="docutils literal"><span class="pre">php</span> <span class="pre">index.php</span> <span class="pre">a</span> <span class="pre">-a</span> <span class="pre">2</span> <span class="pre">-b</span> <span class="pre">--with-fo=value1</span> <span class="pre">foo</span></code></p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;-a&#39;</span><span class="p">);</span> <span class="c1">// 2</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;-b&#39;</span><span class="p">);</span> <span class="c1">// 空字符串</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// a</span>

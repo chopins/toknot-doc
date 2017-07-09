@@ -168,7 +168,7 @@
 <h1>路由配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>路由配置文件位于应用目录下的 <em>config/router.ini</em></p>
 <p><strong>yml</strong> 格式配置文件模板</p>
-<div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-yml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -180,19 +180,19 @@
 10
 11
 12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test-rooter</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">prefix</span> <span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">path</span> <span class="p p-Indicator">:</span> <span class="s">&#39;/p&#39;</span>
-        <span class="l l-Scalar l-Scalar-Plain">controller</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UserAuth@checkLogin</span>
-    <span class="l l-Scalar l-Scalar-Plain">path</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/foo-{id}</span>
-    <span class="l l-Scalar l-Scalar-Plain">controller</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MyController@test</span>
-    <span class="l l-Scalar l-Scalar-Plain">method</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GET</span>
-    <span class="l l-Scalar l-Scalar-Plain">require</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">id</span> <span class="p p-Indicator">:</span> <span class="s">&#39;0-9</span><span class="nv"> </span><span class="s">:{9-12}&#39;</span>
-        <span class="l l-Scalar l-Scalar-Plain">subdomain</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">www</span>
-    <span class="l l-Scalar l-Scalar-Plain">options</span> <span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">schemes</span> <span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">host</span> <span class="p p-Indicator">:</span> <span class="p p-Indicator">{</span><span class="nv">subdomain</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.host.com</span>
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">test-rooter</span><span class="o">:</span><span class="s"></span>
+    <span class="na">prefix</span> <span class="o">:</span><span class="s"></span>
+        <span class="na">path</span> <span class="o">:</span> <span class="s">&#39;/p&#39;</span>
+        <span class="na">controller</span> <span class="o">:</span> <span class="s">UserAuth@checkLogin</span>
+    <span class="na">path</span> <span class="o">:</span> <span class="s">/foo-{id}</span>
+    <span class="na">controller</span> <span class="o">:</span> <span class="s">MyController@test</span>
+    <span class="na">method</span> <span class="o">:</span> <span class="s">GET</span>
+    <span class="na">require</span><span class="o">:</span><span class="s"></span>
+        <span class="na">id</span> <span class="o">:</span> <span class="s">&#39;0-9 :{9-12}&#39;</span>
+        <span class="na">subdomain</span> <span class="o">:</span> <span class="s">www</span>
+    <span class="na">options</span> <span class="o">:</span><span class="s"></span>
+    <span class="na">schemes</span> <span class="o">:</span><span class="s"></span>
+    <span class="na">host</span> <span class="o">:</span> <span class="s">{subdomain}.host.com</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>ini</strong> 格式配置文件模板</p>

@@ -210,7 +210,7 @@
 </pre></div>
 </td></tr></table></div>
 <p>表结构 <strong>yml</strong> 配置文件模板如下</p>
-<div class="highlight-YAML"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-yml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -231,28 +231,28 @@
 19
 20
 21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">user</span> <span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">column</span> <span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">uid</span> <span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">type</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">integer</span>
-            <span class="l l-Scalar l-Scalar-Plain">length</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">11</span>
-            <span class="l l-Scalar l-Scalar-Plain">unsigned</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">true</span>
-            <span class="l l-Scalar l-Scalar-Plain">autoincrement</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">true</span>
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">user</span> <span class="o">:</span><span class="s"></span>
+    <span class="na">column</span> <span class="o">:</span><span class="s"></span>
+        <span class="na">uid</span> <span class="o">:</span><span class="s"></span>
+            <span class="na">type</span> <span class="o">:</span>  <span class="s">integer</span>
+            <span class="na">length</span> <span class="o">:</span>  <span class="s">11</span>
+            <span class="na">unsigned</span> <span class="o">:</span>  <span class="s">true</span>
+            <span class="na">autoincrement</span> <span class="o">:</span>  <span class="s">true</span>
 
-        <span class="l l-Scalar l-Scalar-Plain">username</span> <span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">type</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">string</span>
-            <span class="l l-Scalar l-Scalar-Plain">length</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">255</span>
-    <span class="l l-Scalar l-Scalar-Plain">option</span> <span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">comment</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">用户表</span>
-    <span class="l l-Scalar l-Scalar-Plain">indexes</span> <span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">primary</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">uid</span>
-        <span class="l l-Scalar l-Scalar-Plain">login_name</span> <span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">type</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">unique</span>
-            <span class="l l-Scalar l-Scalar-Plain">fields</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">username</span>
+        <span class="na">username</span> <span class="o">:</span><span class="s"></span>
+            <span class="na">type</span> <span class="o">:</span>  <span class="s">string</span>
+            <span class="na">length</span> <span class="o">:</span>  <span class="s">255</span>
+    <span class="na">option</span> <span class="o">:</span><span class="s"></span>
+    <span class="na">comment</span> <span class="o">:</span>  <span class="s">用户表</span>
+    <span class="na">indexes</span> <span class="o">:</span><span class="s"></span>
+        <span class="na">primary</span> <span class="o">:</span>  <span class="s">uid</span>
+        <span class="na">login_name</span> <span class="o">:</span><span class="s"></span>
+            <span class="na">type</span> <span class="o">:</span>  <span class="s">unique</span>
+            <span class="na">fields</span> <span class="o">:</span> <span class="s">username</span>
 
-        <span class="l l-Scalar l-Scalar-Plain">login_email</span> <span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">type</span> <span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">unique</span>
-            <span class="l l-Scalar l-Scalar-Plain">fields</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">email</span>
+        <span class="na">login_email</span> <span class="o">:</span><span class="s"></span>
+            <span class="na">type</span> <span class="o">:</span>  <span class="s">unique</span>
+            <span class="na">fields</span> <span class="o">:</span> <span class="s">email</span>
 </pre></div>
 </td></tr></table></div>
 <p>结构说明：</p>

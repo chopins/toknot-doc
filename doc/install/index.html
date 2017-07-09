@@ -174,14 +174,14 @@
 <blockquote>
 <div><ul>
 <li><p class="first">nginx:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">location</span>  <span class="o">/</span> <span class="p">{</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nx">location</span>  <span class="o">/</span> <span class="p">{</span>
     <span class="nx">root</span> <span class="nv">$dir</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">apache:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">Directory</span> <span class="s2">&quot;/your-app-path/webroot&quot;</span><span class="o">&gt;</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">Directory</span> <span class="s2">&quot;/your-app-path/webroot&quot;</span><span class="o">&gt;</span>
     <span class="nx">RewriteBase</span> <span class="o">/</span>
     <span class="nx">RewriteRule</span> <span class="o">.*</span>  <span class="nx">index</span><span class="o">.</span><span class="nx">php</span>
     <span class="nx">RewriteEngine</span> <span class="nx">On</span>
@@ -190,7 +190,7 @@
 </div>
 </li>
 <li><p class="first">PHP CLI Web Server:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">php</span> <span class="o">-</span><span class="nx">S</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">:</span><span class="mi">8000</span> <span class="nx">index</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nx">php</span> <span class="o">-</span><span class="nx">S</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">:</span><span class="mi">8000</span> <span class="nx">index</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 </li>

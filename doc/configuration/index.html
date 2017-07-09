@@ -166,7 +166,7 @@
 <p>Toknot 配置文件保存在应用目录下面的 <em>config/</em> 文件夹内，通过应用初始化向导会默认创建 <strong>主配置文件</strong> ， <strong>路由配置文件</strong> 。
 目前的框架版本默认支持 <strong>ini</strong> 与简化版本的 <strong>yml</strong> 格式配置文件。如果需要支持其他格式类型的配置文件，需要在网站入口文件（通常是index.php）文件中包含解析该配置文件的PHP类文件，然后传入 <code class="docutils literal"><span class="pre">main()</span></code> 函数。</p>
 <p>入口文件例子如下</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">include</span> <span class="s1">&#39;yor_config_type_path/SelfConfigParse.php&#39;</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="k">include</span> <span class="s1">&#39;yor_config_type_path/SelfConfigParse.php&#39;</span>
 <span class="nx">main</span><span class="p">(</span><span class="s1">&#39;your_app_path&#39;</span><span class="p">,</span><span class="s1">&#39;my&#39;</span><span class="p">,</span><span class="s1">&#39;SelfConfigParse&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -190,7 +190,7 @@
 </pre></div>
 </div>
 <p>将会解析出数组:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
     <span class="nx">block</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="nx">subblock</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
             <span class="nx">item</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>

@@ -178,7 +178,7 @@
 <div class="section" id="id2">
 <h2>映射表的最简单方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>以下数据库表映射实例，将会创建默认数据库配置项的数据库连接。默认配置项在主配置文件中设置。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$table</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">);</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$table</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>以上代码将返回一个表 <code class="docutils literal"><span class="pre">$tableName</span></code> 映射的类实例。</p>
@@ -186,7 +186,7 @@
 <div class="section" id="id3">
 <h2>多数据库使用方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>只需要调用不同的配置项，即可进行不同的独立的数据库连接。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$table1</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName1</span><span class="p">,</span><span class="s1">&#39;db1&#39;</span><span class="p">);</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$table1</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName1</span><span class="p">,</span><span class="s1">&#39;db1&#39;</span><span class="p">);</span>
 <span class="nv">$table2</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName2</span><span class="p">,</span><span class="s1">&#39;db2&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -199,22 +199,22 @@
 <div class="section" id="id4">
 <h2>建立一个新的数据库连接实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>每一个数据库配置项会有唯一的数据库连接实例，当需要重新连接时，通过以下方法将覆盖指定配置项的连接实例：:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$table1</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">,</span> <span class="s1">&#39;db1&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$table1</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">,</span> <span class="s1">&#39;db1&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>获取数据库连接实例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>以下方法将会获取上一个数据库连接实例：:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>以下方法将会获取指定的数据库配置项的连接实例：:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">(</span><span class="s1">&#39;db1&#39;</span><span class="p">);</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">(</span><span class="s1">&#39;db1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>关闭最近的一个数据库连接方法：:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
