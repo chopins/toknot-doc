@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>配置文件说明 &mdash; toknot-doc 0.1 文档</title>
+  <title>配置文件说明 &mdash; Toknot Documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="索引"
               href="../../genindex.html"/>
         <link rel="search" title="搜索" href="../../search.html"/>
-    <link rel="top" title="toknot-doc 0.1 文档" href="../../index.html"/>
+    <link rel="top" title="Toknot Documentation" href="../../index.html"/>
         <link rel="next" title="主配置文件参考" href="main.html"/>
         <link rel="prev" title="安装说明" href="../install/index.html"/> 
 
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> toknot-doc
+            <a href="../../index.html" class="icon icon-home"> Toknot Documentation
           
 
           
@@ -132,7 +132,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">toknot-doc</a>
+        <a href="../../index.html">Toknot Documentation</a>
       </nav>
 
 
@@ -153,8 +153,6 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/doc/configuration/index.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
   </ul>
@@ -167,9 +165,9 @@
 <h1>配置文件说明<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>Toknot 配置文件保存在应用目录下面的 <em>config/</em> 文件夹内，通过应用初始化向导会默认创建 <strong>主配置文件</strong> ， <strong>路由配置文件</strong> 。
 目前的框架版本默认支持 <strong>ini</strong> 与简化版本的 <strong>yml</strong> 格式配置文件。如果需要支持其他格式类型的配置文件，需要在网站入口文件（通常是index.php）文件中包含解析该配置文件的PHP类文件，然后传入 <code class="docutils literal"><span class="pre">main()</span></code> 函数。</p>
-<p>入口文件例子如下:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="s1">&#39;yor_config_type_path/SelfConfigParse.php&#39;</span>
-<span class="n">main</span><span class="p">(</span><span class="s1">&#39;your_app_path&#39;</span><span class="p">,</span><span class="s1">&#39;my&#39;</span><span class="p">,</span><span class="s1">&#39;SelfConfigParse&#39;</span><span class="p">);</span>
+<p>入口文件例子如下</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">include</span> <span class="s1">&#39;yor_config_type_path/SelfConfigParse.php&#39;</span>
+<span class="nx">main</span><span class="p">(</span><span class="s1">&#39;your_app_path&#39;</span><span class="p">,</span><span class="s1">&#39;my&#39;</span><span class="p">,</span><span class="s1">&#39;SelfConfigParse&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -186,18 +184,18 @@
 </div>
 <div class="section" id="ini">
 <h2>ini 配置文件<a class="headerlink" href="#ini" title="永久链接至标题">¶</a></h2>
-<p>Toknot 框架可以解析出 <strong>ini</strong> 配置文件中按点来划分出的多维配置项目，例如如下配置:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">block</span><span class="o">.</span><span class="n">subblock</span><span class="p">]</span>
-<span class="n">item</span><span class="o">.</span><span class="n">subitem</span><span class="o">.</span><span class="n">sub</span> <span class="o">=</span> <span class="mi">1</span>
+<p>Toknot 框架可以解析出 <strong>ini</strong> 配置文件中按点来划分出的多维配置项目，例如如下配置</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[block.subblock]</span>
+<span class="na">item.subitem.sub</span> <span class="o">=</span> <span class="s">1</span>
 </pre></div>
 </div>
 <p>将会解析出数组:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">(</span>
-    <span class="n">block</span> <span class="o">=&gt;</span> <span class="n">array</span><span class="p">(</span>
-        <span class="n">subblock</span> <span class="o">=&gt;</span> <span class="n">array</span><span class="p">(</span>
-            <span class="n">item</span> <span class="o">=&gt;</span> <span class="n">array</span><span class="p">(</span>
-                <span class="n">subitem</span> <span class="o">=&gt;</span> <span class="n">array</span><span class="p">(</span>
-                    <span class="n">sub</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
+    <span class="nx">block</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="nx">subblock</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="nx">item</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="nx">subitem</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                    <span class="nx">sub</span> <span class="o">=&gt;</span> <span class="mi">1</span>
                 <span class="p">)</span>
             <span class="p">)</span>
         <span class="p">)</span>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>主配置文件参考 &mdash; toknot-doc 0.1 文档</title>
+  <title>主配置文件参考 &mdash; Toknot Documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="索引"
               href="../../genindex.html"/>
         <link rel="search" title="搜索" href="../../search.html"/>
-    <link rel="top" title="toknot-doc 0.1 文档" href="../../index.html"/>
+    <link rel="top" title="Toknot Documentation" href="../../index.html"/>
         <link rel="up" title="配置文件说明" href="index.html"/>
         <link rel="next" title="路由配置" href="router.html"/>
         <link rel="prev" title="配置文件说明" href="index.html"/> 
@@ -54,7 +54,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> toknot-doc
+            <a href="../../index.html" class="icon icon-home"> Toknot Documentation
           
 
           
@@ -133,7 +133,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">toknot-doc</a>
+        <a href="../../index.html">Toknot Documentation</a>
       </nav>
 
 
@@ -156,8 +156,6 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/doc/configuration/main.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
   </ul>
@@ -179,56 +177,98 @@
 </ol>
 <div class="section" id="app">
 <h2>应用配置区块: <em>app</em><a class="headerlink" href="#app" title="永久链接至标题">¶</a></h2>
-<p><strong>ini</strong> 格式参考例子:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">app</span><span class="p">]</span>
-<span class="n">display_trace</span> <span class="o">=</span> <span class="n">true</span>
-<span class="n">timezone</span> <span class="o">=</span> <span class="n">UTC</span>
-<span class="n">charet</span> <span class="o">=</span> <span class="n">utf8</span>
-<span class="n">app_ns</span><span class="o">=</span><span class="n">Model</span>
-<span class="n">ctl_ns</span><span class="o">=</span><span class="n">Controller</span>
-<span class="n">db_table_ns</span><span class="o">=</span><span class="n">Model</span>\<span class="n">DB</span>
-<span class="n">middleware_ns</span><span class="o">=</span><span class="n">Middleware</span>
-<span class="n">service_ns</span><span class="o">=</span>
-<span class="n">view_ns</span><span class="o">=</span><span class="n">View</span>
-<span class="n">router</span> <span class="o">=</span> <span class="n">Toknot</span>\<span class="n">Share</span>\<span class="n">Router</span>
-<span class="n">short_except_path</span> <span class="o">=</span> <span class="n">true</span>
-<span class="n">model_dir</span> <span class="o">=</span> <span class="n">runtime</span><span class="o">/</span><span class="n">model</span>
-<span class="n">default_layout</span> <span class="o">=</span> <span class="n">Model</span>\<span class="n">View</span>\<span class="n">Layout</span>\<span class="n">DefaultLayout</span>
-<span class="n">route_conf_type</span> <span class="o">=</span> <span class="n">ini</span>
-<span class="p">;</span><span class="n">session</span> <span class="n">config</span> <span class="n">see</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">php</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">session</span><span class="o">.</span><span class="n">configuration</span>
-<span class="n">session</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="n">true</span>
-<span class="n">session</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">session</span>
-<span class="n">session</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">sid</span>
-<span class="n">session</span><span class="o">.</span><span class="n">cookie_httponly</span> <span class="o">=</span> <span class="mi">1</span>
+<p><strong>ini</strong> 格式参考例子</p>
+<div class="highlight-ini"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">[app]</span>
+<span class="na">display_trace</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">timezone</span> <span class="o">=</span> <span class="s">UTC</span>
+<span class="na">charet</span> <span class="o">=</span> <span class="s">utf8</span>
+<span class="na">app_ns</span><span class="o">=</span><span class="s">Model</span>
+<span class="na">ctl_ns</span><span class="o">=</span><span class="s">Controller</span>
+<span class="na">db_table_ns</span><span class="o">=</span><span class="s">Model\DB</span>
+<span class="na">middleware_ns</span><span class="o">=</span><span class="s">Middleware</span>
+<span class="na">service_ns</span><span class="o">=</span>
+<span class="na">view_ns</span><span class="o">=</span><span class="s">View</span>
+<span class="na">router</span> <span class="o">=</span> <span class="s">Toknot\Share\Router</span>
+<span class="na">short_except_path</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">model_dir</span> <span class="o">=</span> <span class="s">runtime/model</span>
+<span class="na">default_layout</span> <span class="o">=</span> <span class="s">Model\View\Layout\DefaultLayout</span>
+<span class="na">route_conf_type</span> <span class="o">=</span> <span class="s">ini</span>
+<span class="c1">;session config see http://php.net/session.configuration</span>
+<span class="na">session.enable</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">session.table</span> <span class="o">=</span> <span class="s">session</span>
+<span class="na">session.name</span> <span class="o">=</span> <span class="s">sid</span>
+<span class="na">session.cookie_httponly</span> <span class="o">=</span> <span class="s">1</span>
 </pre></div>
-</div>
-<p><strong>yml</strong> 格式参考例子:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="p">:</span>
-    <span class="n">display_trace</span> <span class="p">:</span> <span class="n">true</span>
-    <span class="n">timezone</span> <span class="p">:</span> <span class="n">UTC</span>
-    <span class="n">charet</span> <span class="p">:</span> <span class="n">utf8</span>
-    <span class="n">app_ns</span> <span class="p">:</span> <span class="n">Tool</span>
-    <span class="n">ctl_ns</span> <span class="p">:</span> <span class="n">Controller</span>
-    <span class="n">model_ns</span> <span class="p">:</span> <span class="n">Model</span>
-    <span class="n">middleware_ns</span> <span class="p">:</span> <span class="n">Middleware</span>
-    <span class="n">service_ns</span><span class="p">:</span>
-    <span class="n">db_table_ns</span> <span class="p">:</span> <span class="n">Model</span>
-    <span class="n">route_conf_type</span> <span class="p">:</span> <span class="n">yml</span>
-    <span class="n">view_ns</span> <span class="p">:</span> <span class="n">View</span>
-    <span class="n">default_call</span> <span class="p">:</span> <span class="n">rt</span>
-    <span class="n">short_except_path</span> <span class="p">:</span> <span class="n">true</span>
-    <span class="n">model_dir</span> <span class="p">:</span> <span class="n">runtime</span><span class="o">/</span><span class="n">model</span>
-    <span class="n">default_layout</span> <span class="p">:</span> <span class="n">Model</span>\<span class="n">View</span>\<span class="n">Layout</span>\<span class="n">DefaultLayout</span>
-    <span class="n">log</span> <span class="p">:</span>
-        <span class="n">enable</span> <span class="p">:</span> <span class="n">false</span>
-        <span class="n">logger</span> <span class="p">:</span> <span class="n">runtime</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">trace</span>
-    <span class="n">session</span> <span class="p">:</span>
-        <span class="n">enable</span> <span class="p">:</span> <span class="n">true</span>
-        <span class="n">table</span> <span class="p">:</span> <span class="n">session</span>
-        <span class="n">name</span> <span class="p">:</span> <span class="n">sid</span>
-        <span class="n">cookie_httponly</span> <span class="p">:</span> <span class="mi">1</span>
+</td></tr></table></div>
+<p><strong>yml</strong> 格式参考例子</p>
+<div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span> <span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">display_trace</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="l l-Scalar l-Scalar-Plain">timezone</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UTC</span>
+    <span class="l l-Scalar l-Scalar-Plain">charet</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8</span>
+    <span class="l l-Scalar l-Scalar-Plain">app_ns</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Tool</span>
+    <span class="l l-Scalar l-Scalar-Plain">ctl_ns</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Controller</span>
+    <span class="l l-Scalar l-Scalar-Plain">model_ns</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Model</span>
+    <span class="l l-Scalar l-Scalar-Plain">middleware_ns</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Middleware</span>
+    <span class="l l-Scalar l-Scalar-Plain">service_ns</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">db_table_ns</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Model</span>
+    <span class="l l-Scalar l-Scalar-Plain">route_conf_type</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
+    <span class="l l-Scalar l-Scalar-Plain">view_ns</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">View</span>
+    <span class="l l-Scalar l-Scalar-Plain">default_call</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rt</span>
+    <span class="l l-Scalar l-Scalar-Plain">short_except_path</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="l l-Scalar l-Scalar-Plain">model_dir</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">runtime/model</span>
+    <span class="l l-Scalar l-Scalar-Plain">default_layout</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Model\View\Layout\DefaultLayout</span>
+    <span class="l l-Scalar l-Scalar-Plain">log</span> <span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">enable</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+        <span class="l l-Scalar l-Scalar-Plain">logger</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">runtime/logs/trace</span>
+    <span class="l l-Scalar l-Scalar-Plain">session</span> <span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">enable</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">table</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">session</span>
+        <span class="l l-Scalar l-Scalar-Plain">name</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sid</span>
+        <span class="l l-Scalar l-Scalar-Plain">cookie_httponly</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="section" id="id2">
 <h3><strong>app</strong> 区块参数解释：<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
@@ -353,90 +393,150 @@
 <div class="section" id="vendor">
 <h2>引用的其他项目配置区块: <em>vendor</em><a class="headerlink" href="#vendor" title="永久链接至标题">¶</a></h2>
 <p>本区块每增加一个配置项目，将项目导入一个相关库。项目模板类似：<code class="docutils literal"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">vendor/Vendor_namespace</span></code>。
-例子:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">vendor</span><span class="p">]</span>
-<span class="n">dbal</span> <span class="o">=</span> <span class="n">doctrine</span><span class="o">/</span><span class="n">Doctrine</span>
-<span class="n">routing</span> <span class="o">=</span> <span class="n">symfony</span><span class="o">/</span><span class="n">Symfony</span>
-<span class="n">phpdoc</span> <span class="o">=</span> <span class="n">zend</span><span class="o">/</span><span class="n">Zend</span>
+例子</p>
+<div class="highlight-ini"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">[vendor]</span>
+<span class="na">dbal</span> <span class="o">=</span> <span class="s">doctrine/Doctrine</span>
+<span class="na">routing</span> <span class="o">=</span> <span class="s">symfony/Symfony</span>
+<span class="na">phpdoc</span> <span class="o">=</span> <span class="s">zend/Zend</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="wrapper">
 <h2>处理请求的协议配置区块: <em>wrapper</em><a class="headerlink" href="#wrapper" title="永久链接至标题">¶</a></h2>
 <p>本区块配置处理请求的方式，Toknot 框架提供了``ToknotShareRouteRouter``路由器来处理请求，配置模板如下面的例子。
-例子:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">wrapper</span><span class="p">]</span>
-<span class="n">rt</span> <span class="o">=</span> <span class="n">Toknot</span>\<span class="n">Share</span>\<span class="n">Route</span>\<span class="n">Router</span>
-<span class="n">ts</span> <span class="o">=</span> <span class="n">Toknot</span>\<span class="n">Share</span>\<span class="n">Service</span>\<span class="n">Wrapper</span>
+例子</p>
+<div class="highlight-ini"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">[wrapper]</span>
+<span class="na">rt</span> <span class="o">=</span> <span class="s">Toknot\Share\Route\Router</span>
+<span class="na">ts</span> <span class="o">=</span> <span class="s">Toknot\Share\Service\Wrapper</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="database">
 <h2>数据库配置区块: <em>database</em><a class="headerlink" href="#database" title="永久链接至标题">¶</a></h2>
 <p>本区块为数据库相关配置，框架提供的数据操作组件将会使用本区块配置。
-<strong>ini</strong> 格式配置例子:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">database</span><span class="p">]</span>
-<span class="n">default</span> <span class="o">=</span><span class="n">db1</span>
-<span class="n">ext_type</span> <span class="o">=</span> <span class="n">tinyint</span>
-<span class="p">;</span><span class="n">primary</span> <span class="n">database</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">config_type</span> <span class="o">=</span> <span class="n">ini</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">root</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">dbname</span> <span class="o">=</span> <span class="n">process</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">charset</span> <span class="o">=</span> <span class="n">utf8</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">mysql</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">table_config</span> <span class="o">=</span> <span class="n">database</span>   <span class="p">;</span><span class="n">tables</span> <span class="n">info</span> <span class="n">config</span> <span class="n">file</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">table_default</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">innodb</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">table_default</span><span class="o">.</span><span class="n">collate</span> <span class="o">=</span> <span class="n">utf8_general_ci</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">column_default</span><span class="o">.</span><span class="n">unsigned</span> <span class="o">=</span> <span class="n">true</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">column_default</span><span class="o">.</span><span class="n">collate</span> <span class="o">=</span> <span class="n">utf8_general_ci</span>
-<span class="n">db1</span><span class="o">.</span><span class="n">config_type</span> <span class="o">=</span> <span class="n">ini</span>
+<strong>ini</strong> 格式配置例子</p>
+<div class="highlight-ini"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">[database]</span>
+<span class="na">default</span> <span class="o">=</span><span class="s">db1</span>
+<span class="na">ext_type</span> <span class="o">=</span> <span class="s">tinyint</span>
+<span class="c1">;primary database</span>
+<span class="na">db1.host</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+<span class="na">db1.config_type</span> <span class="o">=</span> <span class="s">ini</span>
+<span class="na">db1.port</span> <span class="o">=</span> <span class="s">3306</span>
+<span class="na">db1.user</span> <span class="o">=</span> <span class="s">root</span>
+<span class="na">db1.password</span> <span class="o">=</span>
+<span class="na">db1.dbname</span> <span class="o">=</span> <span class="s">process</span>
+<span class="na">db1.charset</span> <span class="o">=</span> <span class="s">utf8</span>
+<span class="na">db1.type</span> <span class="o">=</span> <span class="s">mysql</span>
+<span class="na">db1.table_config</span> <span class="o">=</span> <span class="s">database   ;tables info config file</span>
+<span class="na">db1.table_default.engine</span> <span class="o">=</span> <span class="s">innodb</span>
+<span class="na">db1.table_default.collate</span> <span class="o">=</span> <span class="s">utf8_general_ci</span>
+<span class="na">db1.column_default.unsigned</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">db1.column_default.collate</span> <span class="o">=</span> <span class="s">utf8_general_ci</span>
+<span class="na">db1.config_type</span> <span class="o">=</span> <span class="s">ini</span>
 
-<span class="n">db2</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">root</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">dbname</span> <span class="o">=</span> <span class="n">word</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">charset</span> <span class="o">=</span> <span class="n">utf8</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">mysql</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">table_config</span> <span class="o">=</span> <span class="n">word</span>   <span class="p">;</span><span class="n">tables</span> <span class="n">info</span> <span class="n">config</span> <span class="n">file</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">table_default</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">innodb</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">table_default</span><span class="o">.</span><span class="n">collate</span> <span class="o">=</span> <span class="n">utf8_general_ci</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">column_default</span><span class="o">.</span><span class="n">unsigned</span> <span class="o">=</span> <span class="n">false</span>
-<span class="n">db2</span><span class="o">.</span><span class="n">column_default</span><span class="o">.</span><span class="n">collate</span> <span class="o">=</span> <span class="n">utf8_general_ci</span>
+<span class="na">db2.host</span> <span class="o">=</span> <span class="s">127.0.0.1</span>
+<span class="na">db2.port</span> <span class="o">=</span> <span class="s">3306</span>
+<span class="na">db2.user</span> <span class="o">=</span> <span class="s">root</span>
+<span class="na">db2.password</span> <span class="o">=</span>
+<span class="na">db2.dbname</span> <span class="o">=</span> <span class="s">word</span>
+<span class="na">db2.charset</span> <span class="o">=</span> <span class="s">utf8</span>
+<span class="na">db2.type</span> <span class="o">=</span> <span class="s">mysql</span>
+<span class="na">db2.table_config</span> <span class="o">=</span> <span class="s">word   ;tables info config file</span>
+<span class="na">db2.table_default.engine</span> <span class="o">=</span> <span class="s">innodb</span>
+<span class="na">db2.table_default.collate</span> <span class="o">=</span> <span class="s">utf8_general_ci</span>
+<span class="na">db2.column_default.unsigned</span> <span class="o">=</span> <span class="s">false</span>
+<span class="na">db2.column_default.collate</span> <span class="o">=</span> <span class="s">utf8_general_ci</span>
 </pre></div>
-</div>
-<p><strong>yml</strong> 格式配置例子，下面配置使用 <em>yml</em> 文件的锚点引用功能:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">database</span> <span class="p">:</span>
-    <span class="n">ext_type</span> <span class="p">:</span> <span class="n">tinyint</span>
-    <span class="n">default</span> <span class="p">:</span> <span class="n">db2</span>
-    <span class="n">dbdefault</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">dbdefault</span>
-        <span class="n">host</span> <span class="p">:</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
-        <span class="n">port</span> <span class="p">:</span> <span class="mi">3306</span>
-        <span class="n">user</span> <span class="p">:</span> <span class="n">root</span>
-        <span class="n">password</span> <span class="p">:</span>
-        <span class="n">charset</span> <span class="p">:</span> <span class="n">utf8</span>
-        <span class="nb">type</span> <span class="p">:</span> <span class="n">mysql</span>
-        <span class="n">table_default</span><span class="p">:</span>
-            <span class="n">engine</span> <span class="p">:</span> <span class="n">innodb</span>
-            <span class="n">collate</span> <span class="p">:</span> <span class="n">utf8_general_ci</span>
-        <span class="n">column_default</span><span class="p">:</span>
-            <span class="n">unsigned</span> <span class="p">:</span> <span class="n">true</span>
-            <span class="n">collate</span> <span class="p">:</span> <span class="n">utf8_general_ci</span>
-    <span class="n">db1</span><span class="p">:</span>
-        <span class="n">dbname</span> <span class="p">:</span> <span class="n">process</span>
-        <span class="n">table_config</span> <span class="p">:</span> <span class="n">database</span>
-        <span class="n">config_type</span> <span class="p">:</span> <span class="n">yml</span>
-        <span class="o">&lt;&lt;</span> <span class="p">:</span> <span class="o">*</span><span class="n">dbdefault</span>
-    <span class="n">db2</span><span class="p">:</span>
-        <span class="n">dbname</span> <span class="p">:</span> <span class="n">event</span>
-        <span class="n">table_config</span> <span class="p">:</span> <span class="n">process</span>
-        <span class="n">config_type</span> <span class="p">:</span> <span class="n">yml</span>
-        <span class="o">&lt;&lt;</span> <span class="p">:</span> <span class="o">*</span><span class="n">dbdefault</span>
+</td></tr></table></div>
+<p><strong>yml</strong> 格式配置例子，下面配置使用 <em>yml</em> 文件的锚点引用功能</p>
+<div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">database</span> <span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">ext_type</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tinyint</span>
+    <span class="l l-Scalar l-Scalar-Plain">default</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">db2</span>
+    <span class="l l-Scalar l-Scalar-Plain">dbdefault</span><span class="p p-Indicator">:</span> <span class="nl">&amp;dbdefault</span>
+        <span class="l l-Scalar l-Scalar-Plain">host</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+        <span class="l l-Scalar l-Scalar-Plain">port</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+        <span class="l l-Scalar l-Scalar-Plain">user</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+        <span class="l l-Scalar l-Scalar-Plain">password</span> <span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">charset</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8</span>
+        <span class="l l-Scalar l-Scalar-Plain">type</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mysql</span>
+        <span class="l l-Scalar l-Scalar-Plain">table_default</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">engine</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">innodb</span>
+            <span class="l l-Scalar l-Scalar-Plain">collate</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
+        <span class="l l-Scalar l-Scalar-Plain">column_default</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">unsigned</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+            <span class="l l-Scalar l-Scalar-Plain">collate</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
+    <span class="l l-Scalar l-Scalar-Plain">db1</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">dbname</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">process</span>
+        <span class="l l-Scalar l-Scalar-Plain">table_config</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
+        <span class="l l-Scalar l-Scalar-Plain">config_type</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
+        <span class="l l-Scalar l-Scalar-Plain">&lt;&lt;</span> <span class="p p-Indicator">:</span> <span class="nv">*dbdefault</span>
+    <span class="l l-Scalar l-Scalar-Plain">db2</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">dbname</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">event</span>
+        <span class="l l-Scalar l-Scalar-Plain">table_config</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">process</span>
+        <span class="l l-Scalar l-Scalar-Plain">config_type</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
+        <span class="l l-Scalar l-Scalar-Plain">&lt;&lt;</span> <span class="p p-Indicator">:</span> <span class="nv">*dbdefault</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="section" id="id3">
 <h3>数据库参数：<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">

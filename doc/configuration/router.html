@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>路由配置 &mdash; toknot-doc 0.1 文档</title>
+  <title>路由配置 &mdash; Toknot Documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="索引"
               href="../../genindex.html"/>
         <link rel="search" title="搜索" href="../../search.html"/>
-    <link rel="top" title="toknot-doc 0.1 文档" href="../../index.html"/>
+    <link rel="top" title="Toknot Documentation" href="../../index.html"/>
         <link rel="up" title="配置文件说明" href="index.html"/>
         <link rel="next" title="数据库结构配置" href="database.html"/>
         <link rel="prev" title="主配置文件参考" href="main.html"/> 
@@ -54,7 +54,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> toknot-doc
+            <a href="../../index.html" class="icon icon-home"> Toknot Documentation
           
 
           
@@ -133,7 +133,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">toknot-doc</a>
+        <a href="../../index.html">Toknot Documentation</a>
       </nav>
 
 
@@ -156,8 +156,6 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/doc/configuration/router.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
   </ul>
@@ -169,36 +167,58 @@
   <div class="section" id="id1">
 <h1>路由配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>路由配置文件位于应用目录下的 <em>config/router.ini</em></p>
-<p><strong>yml</strong> 格式配置文件模板:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">test</span><span class="o">-</span><span class="n">rooter</span><span class="p">:</span>
-    <span class="n">prefix</span> <span class="p">:</span>
-        <span class="n">path</span> <span class="p">:</span> <span class="s1">&#39;/p&#39;</span>
-        <span class="n">controller</span> <span class="p">:</span> <span class="n">UserAuth</span><span class="nd">@checkLogin</span>
-    <span class="n">path</span> <span class="p">:</span> <span class="o">/</span><span class="n">foo</span><span class="o">-</span><span class="p">{</span><span class="nb">id</span><span class="p">}</span>
-    <span class="n">controller</span> <span class="p">:</span> <span class="n">MyController</span><span class="nd">@test</span>
-    <span class="n">method</span> <span class="p">:</span> <span class="n">GET</span>
-    <span class="n">require</span><span class="p">:</span>
-        <span class="nb">id</span> <span class="p">:</span> <span class="s1">&#39;0-9 :{9-12}&#39;</span>
-        <span class="n">subdomain</span> <span class="p">:</span> <span class="n">www</span>
-    <span class="n">options</span> <span class="p">:</span>
-    <span class="n">schemes</span> <span class="p">:</span>
-    <span class="n">host</span> <span class="p">:</span> <span class="p">{</span><span class="n">subdomain</span><span class="p">}</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">com</span>
+<p><strong>yml</strong> 格式配置文件模板</p>
+<div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test-rooter</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">prefix</span> <span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">path</span> <span class="p p-Indicator">:</span> <span class="s">&#39;/p&#39;</span>
+        <span class="l l-Scalar l-Scalar-Plain">controller</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">UserAuth@checkLogin</span>
+    <span class="l l-Scalar l-Scalar-Plain">path</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/foo-{id}</span>
+    <span class="l l-Scalar l-Scalar-Plain">controller</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">MyController@test</span>
+    <span class="l l-Scalar l-Scalar-Plain">method</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">GET</span>
+    <span class="l l-Scalar l-Scalar-Plain">require</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">id</span> <span class="p p-Indicator">:</span> <span class="s">&#39;0-9</span><span class="nv"> </span><span class="s">:{9-12}&#39;</span>
+        <span class="l l-Scalar l-Scalar-Plain">subdomain</span> <span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">www</span>
+    <span class="l l-Scalar l-Scalar-Plain">options</span> <span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">schemes</span> <span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">host</span> <span class="p p-Indicator">:</span> <span class="p p-Indicator">{</span><span class="nv">subdomain</span><span class="p p-Indicator">}</span><span class="l l-Scalar l-Scalar-Plain">.host.com</span>
 </pre></div>
-</div>
-<p><strong>ini</strong> 格式配置文件模板:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">test</span><span class="o">-</span><span class="n">rooter</span><span class="p">]</span>
-<span class="n">prefix</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span>
-<span class="n">prefix</span><span class="o">.</span><span class="n">controller</span> <span class="o">=</span> <span class="n">UserAuth</span><span class="nd">@checkLogin</span>
-<span class="n">path</span> <span class="o">=</span> <span class="o">/</span><span class="n">test</span><span class="o">-</span><span class="p">{</span><span class="nb">id</span><span class="p">}</span>
-<span class="n">controller</span> <span class="o">=</span> <span class="n">MyController</span><span class="nd">@test</span>
-<span class="n">method</span> <span class="o">=</span> <span class="n">GET</span>
-<span class="n">require</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]{</span><span class="mi">9</span><span class="o">-</span><span class="mi">12</span><span class="p">}</span>
-<span class="n">require</span><span class="o">.</span><span class="n">subdomain</span> <span class="o">=</span> <span class="n">www</span>
-<span class="n">options</span> <span class="o">=</span>
-<span class="n">schemes</span> <span class="o">=</span>
-<span class="n">host</span> <span class="o">=</span> <span class="p">{</span><span class="n">subdomain</span><span class="p">}</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">com</span>
+</td></tr></table></div>
+<p><strong>ini</strong> 格式配置文件模板</p>
+<div class="highlight-ini"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">[test-rooter]</span>
+<span class="na">prefix.path</span> <span class="o">=</span>
+<span class="na">prefix.controller</span> <span class="o">=</span> <span class="s">UserAuth@checkLogin</span>
+<span class="na">path</span> <span class="o">=</span> <span class="s">/test-{id}</span>
+<span class="na">controller</span> <span class="o">=</span> <span class="s">MyController@test</span>
+<span class="na">method</span> <span class="o">=</span> <span class="s">GET</span>
+<span class="na">require.id</span> <span class="o">=</span> <span class="s">[0-9]{9-12}</span>
+<span class="na">require.subdomain</span> <span class="o">=</span> <span class="s">www</span>
+<span class="na">options</span> <span class="o">=</span>
+<span class="na">schemes</span> <span class="o">=</span>
+<span class="na">host</span> <span class="o">=</span> <span class="s">{subdomain}.host.com</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <div class="section" id="id2">
 <h2>参数解释<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <table border="1" class="docutils">

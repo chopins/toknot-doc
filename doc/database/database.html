@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>数据库操作 &mdash; toknot-doc 0.1 文档</title>
+  <title>数据库操作 &mdash; Toknot Documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="索引"
               href="../../genindex.html"/>
         <link rel="search" title="搜索" href="../../search.html"/>
-    <link rel="top" title="toknot-doc 0.1 文档" href="../../index.html"/>
+    <link rel="top" title="Toknot Documentation" href="../../index.html"/>
         <link rel="up" title="数据库参考" href="index.html"/>
         <link rel="next" title="数据库表操作" href="table.html"/>
         <link rel="prev" title="数据库参考" href="index.html"/> 
@@ -54,7 +54,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> toknot-doc
+            <a href="../../index.html" class="icon icon-home"> Toknot Documentation
           
 
           
@@ -139,7 +139,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">toknot-doc</a>
+        <a href="../../index.html">Toknot Documentation</a>
       </nav>
 
 
@@ -162,8 +162,6 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/doc/database/database.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
   </ul>
@@ -180,7 +178,7 @@
 <div class="section" id="id2">
 <h2>映射表的最简单方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>以下数据库表映射实例，将会创建默认数据库配置项的数据库连接。默认配置项在主配置文件中设置。:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$table = DBA::table($tableName);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$table</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>以上代码将返回一个表 <code class="docutils literal"><span class="pre">$tableName</span></code> 映射的类实例。</p>
@@ -188,8 +186,8 @@
 <div class="section" id="id3">
 <h2>多数据库使用方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>只需要调用不同的配置项，即可进行不同的独立的数据库连接。:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$table1 = DBA::table($tableName1,&#39;db1&#39;);
-$table2 = DBA::table($tableName2,&#39;db2&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$table1</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName1</span><span class="p">,</span><span class="s1">&#39;db1&#39;</span><span class="p">);</span>
+<span class="nv">$table2</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName2</span><span class="p">,</span><span class="s1">&#39;db2&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>以上代码说明如下：</p>
@@ -201,23 +199,23 @@ $table2 = DBA::table($tableName2,&#39;db2&#39;);
 <div class="section" id="id4">
 <h2>建立一个新的数据库连接实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>每一个数据库配置项会有唯一的数据库连接实例，当需要重新连接时，通过以下方法将覆盖指定配置项的连接实例：:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$table1 = DBA::table($tableName, &#39;db1&#39;, true);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$table1</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="nv">$tableName</span><span class="p">,</span> <span class="s1">&#39;db1&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>获取数据库连接实例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>以下方法将会获取上一个数据库连接实例：:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$db = DBA::single();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>以下方法将会获取指定的数据库配置项的连接实例：:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$db = DBA::single(&#39;db1&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">(</span><span class="s1">&#39;db1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>关闭最近的一个数据库连接方法：:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$db = DBA::single();
-$db-&gt;close();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span> <span class="o">=</span> <span class="nx">DBA</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
