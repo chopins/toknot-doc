@@ -1,4 +1,0 @@
-
-[pygments.lexers]
-tklexer = tklexer.tklexer:ToknotLexer
-ymllexer = tklexer.ymllexer:YmlLexer
