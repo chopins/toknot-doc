@@ -45,9 +45,12 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'toknot-doc'
+project = u'Toknot Documentation'
 copyright = u'2017, chopin'
 author = u'chopin'
+html_show_sourcelink = False
+html_title = u'Toknot Documentation'
+highlight_language = u'ci'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

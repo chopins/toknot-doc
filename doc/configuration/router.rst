@@ -4,7 +4,10 @@
 
 路由配置文件位于应用目录下的 *config/router.ini*
 
-**yml** 格式配置文件模板::
+**yml** 格式配置文件模板
+
+.. code-block:: yaml
+    :linenos:
 
     test-rooter:
         prefix :
@@ -20,7 +23,10 @@
         schemes : 
         host : {subdomain}.host.com
 
-**ini** 格式配置文件模板::
+**ini** 格式配置文件模板
+
+.. code-block:: ini
+    :linenos:
 
     [test-rooter]
     prefix.path =

@@ -15,7 +15,10 @@
 应用配置区块: *app*
 ****************************
 
-**ini** 格式参考例子::
+**ini** 格式参考例子
+
+.. code-block:: ini
+    :linenos:
 
     [app]
     display_trace = true
@@ -39,7 +42,10 @@
     session.cookie_httponly = 1
 
 
-**yml** 格式参考例子::
+**yml** 格式参考例子
+
+.. code-block:: yaml
+    :linenos:
 
     app :
         display_trace : true
@@ -110,7 +116,10 @@
 *************************************
 
 本区块每增加一个配置项目，将项目导入一个相关库。项目模板类似：``key = vendor/Vendor_namespace``。
-例子::
+例子
+
+.. code-block:: ini
+    :linenos:
 
     [vendor]
     dbal = doctrine/Doctrine
@@ -122,7 +131,10 @@
 *************************************
 
 本区块配置处理请求的方式，Toknot 框架提供了``Toknot\Share\Route\Router``路由器来处理请求，配置模板如下面的例子。
-例子::
+例子
+
+.. code-block:: ini
+    :linenos:
 
     [wrapper]
     rt = Toknot\Share\Route\Router
@@ -133,7 +145,10 @@
 *************************************
 
 本区块为数据库相关配置，框架提供的数据操作组件将会使用本区块配置。
-**ini** 格式配置例子::
+**ini** 格式配置例子
+
+.. code-block:: ini
+    :linenos:
 
     [database]
     default =db1
@@ -167,7 +182,10 @@
     db2.column_default.unsigned = false
     db2.column_default.collate = utf8_general_ci
 
-**yml** 格式配置例子，下面配置使用 *yml* 文件的锚点引用功能::
+**yml** 格式配置例子，下面配置使用 *yml* 文件的锚点引用功能
+
+.. code-block:: yaml
+    :linenos:
 
     database :
         ext_type : tinyint
