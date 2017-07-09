@@ -31,7 +31,7 @@
  
 表结构 **yml** 配置文件模板如下
  
-.. code-block:: YAML
+.. code-block:: yml
     :linenos:
 
     user : 

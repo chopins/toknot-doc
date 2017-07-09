@@ -50,7 +50,7 @@ copyright = u'2017, chopin'
 author = u'chopin'
 html_show_sourcelink = False
 html_title = u'Toknot Documentation'
-highlight_language = u'ci'
+highlight_language = u'tk'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

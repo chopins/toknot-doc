@@ -44,7 +44,7 @@
 
 **yml** 格式参考例子
 
-.. code-block:: yaml
+.. code-block:: yml
     :linenos:
 
     app :
@@ -162,7 +162,8 @@
     db1.dbname = process
     db1.charset = utf8
     db1.type = mysql
-    db1.table_config = database   ;tables info config file
+    ;tables info config file
+    db1.table_config = database
     db1.table_default.engine = innodb
     db1.table_default.collate = utf8_general_ci
     db1.column_default.unsigned = true
@@ -176,7 +177,8 @@
     db2.dbname = word
     db2.charset = utf8
     db2.type = mysql
-    db2.table_config = word   ;tables info config file
+    ;tables info config file
+    db2.table_config = word
     db2.table_default.engine = innodb
     db2.table_default.collate = utf8_general_ci
     db2.column_default.unsigned = false
@@ -184,7 +186,7 @@
 
 **yml** 格式配置例子，下面配置使用 *yml* 文件的锚点引用功能
 
-.. code-block:: yaml
+.. code-block:: yml
     :linenos:
 
     database :

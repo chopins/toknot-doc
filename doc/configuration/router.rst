@@ -6,7 +6,7 @@
 
 **yml** 格式配置文件模板
 
-.. code-block:: yaml
+.. code-block:: yml
     :linenos:
 
     test-rooter:

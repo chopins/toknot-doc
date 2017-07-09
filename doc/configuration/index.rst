@@ -7,7 +7,7 @@ Toknot 配置文件保存在应用目录下面的 *config/* 文件夹内，通�
 
 入口文件例子如下
 
-.. code-block:: ci
+.. code-block:: tk
 
     include 'yor_config_type_path/SelfConfigParse.php'
     main('your_app_path','my','SelfConfigParse');
