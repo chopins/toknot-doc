@@ -170,11 +170,48 @@
             
   <div class="section" id="id1">
 <h1>命令行下参数访问<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>Toknot 框架内核提供了命令行参数访问方法。支持长参数，短参数，以及数字索引。内核提供了以下方法:</p>
-<ol class="arabic simple">
-<li><code class="docutils literal"><span class="pre">Kernel::getArg()</span></code> 获取指定参数,参数不存在返回 <code class="docutils literal"><span class="pre">null</span></code></li>
-<li><code class="docutils literal"><span class="pre">Kernel::hasArg()</span></code> 检查参数是否存在，返回 <code class="docutils literal"><span class="pre">boolean</span></code> 值，存在返回 <code class="docutils literal"><span class="pre">true</span></code>, 否在 <code class="docutils literal"><span class="pre">false</span></code></li>
-</ol>
+<p>Toknot 框架内核 <code class="docutils literal"><span class="pre">Toknot\Boot\Kernel</span></code> 提供了命令行参数访问方法。支持长参数，短参数，以及数字索引。内核提供了以下方法:</p>
+<dl class="class">
+<dt id="Kernel">
+<em class="property">class </em><code class="descname">Kernel</code><a class="headerlink" href="#Kernel" title="永久链接至目标">¶</a></dt>
+<dd><dl class="function">
+<dt id="Kernel.getArg">
+<code class="descname">getArg</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Kernel.getArg" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>$key</strong> (<em>string</em>) &#8211; 参数名</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">参数值</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>获取指定参数,参数不存在返回 <code class="docutils literal"><span class="pre">null</span></code></p>
+<dl class="function">
+<dt id="Kernel.hasArg">
+<code class="descname">hasArg</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#Kernel.hasArg" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>$key</strong> (<em>string</em>) &#8211; 参数名</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">存在返回 <code class="docutils literal"><span class="pre">true</span></code> 否在 <code class="docutils literal"><span class="pre">false</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body">boolean</td>
+</tr>
+</tbody>
+</table>
+<p>检查参数是否存在，返回 <code class="docutils literal"><span class="pre">boolean</span></code> 值，存在返回 <code class="docutils literal"><span class="pre">true</span></code>, 否在 <code class="docutils literal"><span class="pre">false</span></code></p>
+</dd></dl>
+
 <p>长参数用法,对于命令： <code class="docutils literal"><span class="pre">php</span> <span class="pre">index.php</span> <span class="pre">--with-foo=thevalue1</span>&#160; <span class="pre">--with-foo2=thevalue2</span> <span class="pre">--with-foo3</span></code></p>
 <div class="highlight-tk"><div class="highlight"><pre><span></span><span class="nv">$kernel</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
 <span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">getArg</span><span class="p">(</span><span class="s1">&#39;--with-foo&#39;</span><span class="p">);</span> <span class="c1">// thevalue1</span>

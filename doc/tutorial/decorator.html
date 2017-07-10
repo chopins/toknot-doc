@@ -170,7 +170,73 @@
             
   <div class="section" id="id1">
 <h1>装饰器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>装饰器操作由 <code class="docutils literal"><span class="pre">Toknot\Boot\Decorator</span></code> 提供。</p>
+<p>装饰器操作由 <code class="docutils literal"><span class="pre">Toknot\Boot\Decorator</span></code> 提供。支持函数于类方法装饰。</p>
+<dl class="function">
+<dt>
+<code class="descname">Kernel::decorator($func [, $isClass = false])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$func</strong> (<em>string|array</em>) &#8211; 函数名，类名，或者包含类名与方法的数组</li>
+<li><strong>$isClass</strong> (<em>boolean</em>) &#8211; 是否是类名，为 <strong>true</strong> 是，字符串才会被当成类名</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="Toknot.Boot.Decorator">
+<em class="property">class </em><code class="descclassname">Toknot.Boot.</code><code class="descname">Decorator</code><span class="sig-paren">(</span><em>$func</em><span class="optional">[</span>, <em>$isClass = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Toknot.Boot.Decorator" title="永久链接至目标">¶</a></dt>
+<dd><p>可直接实例化获得装饰器</p>
+</dd></dl>
+
+<div class="highlight-tk"><div class="highlight"><pre><span></span>   <span class="k">use</span> <span class="nx">Toknot\Boot\Kernel</span><span class="p">;</span>
+
+   <span class="k">function</span> <span class="nf">dec1</span><span class="p">(</span><span class="nv">$r</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">echo</span> <span class="nv">$r</span><span class="p">;</span>
+       <span class="k">echo</span> <span class="s1">&#39;this dec1&#39;</span><span class="p">;</span>
+       <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">function</span> <span class="nf">dec2</span><span class="p">(</span><span class="nv">$r</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">echo</span> <span class="nv">$r</span><span class="p">;</span>
+       <span class="k">echo</span> <span class="s1">&#39;this dec2&#39;</span>
+       <span class="k">return</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+           <span class="k">echo</span> <span class="s1">&#39;return function&#39;</span><span class="p">;</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+
+   <span class="sd">/**</span>
+<span class="sd">    * @decorator dec2</span>
+<span class="sd">    * @decorator dec1</span>
+<span class="sd">    */</span>
+   <span class="k">function</span> <span class="nf">call</span><span class="p">()</span> <span class="p">{</span>
+       <span class="k">echo</span> <span class="s1">&#39;this call&#39;</span><span class="p">;</span>
+       <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="nv">$dec</span> <span class="o">=</span> <span class="nx">Kernel</span><span class="o">::</span><span class="na">single</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">decorator</span><span class="p">(</span><span class="s1">&#39;call&#39;</span><span class="p">);</span>
+   <span class="cm">/*</span>
+<span class="cm">    上面代码会依次输出：</span>
+<span class="cm">    this call</span>
+<span class="cm">    1</span>
+<span class="cm">    this dec1</span>
+<span class="cm">    2</span>
+<span class="cm">    this dec2</span>
+<span class="cm">   */</span>
+   <span class="nv">$dec</span><span class="p">();</span> <span class="c1">// 输出 return function</span>
+
+<span class="nx">Toknot</span> <span class="nx">是使用</span> <span class="nx">PHP</span> <span class="nx">代码注释实现的装饰器，所以对于代码注释，必须符合规范。</span>
+
+<span class="nx">装饰器支持函数与类静态方法。可对函数，类方法，类进行装饰。</span>
+
+<span class="nx">如果装饰器是静态类方法，注释值应当是用</span> <span class="o">**::**</span> <span class="nx">分割类名和方法名</span>
+</pre></div>
+</div>
 </div>
 
 

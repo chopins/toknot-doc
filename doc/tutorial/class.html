@@ -171,6 +171,273 @@
   <div class="section" id="id1">
 <h1>类与方法操作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>Toknot 框架提供了一组类、方法、函数的访问方法。这些方法主要由 <code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> ,  <code class="docutils literal"><span class="pre">Toknot\Boot\ObjectHelper</span></code> , <code class="docutils literal"><span class="pre">Toknot\Boot\MethodHelper</span></code> 提供。但是以上类都无法直接实例化。</p>
+<div class="section" id="id2">
+<h2>主要函数参考<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩展。当类继承了 <code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> 抽象类后，会获得以下方法：</p>
+<dl class="function">
+<dt>
+<code class="descname">static callFunc($callable [, $argv = array() ])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>$callable</strong> (<em>callable</em>) &#8211; 可调用函数</li>
+<li><strong>$argv</strong> (<em>array</em>) &#8211; 传给函数的参数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">返回传入的函数运行的返回值</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">mix</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>本静态方法是 PHP <code class="docutils literal"><span class="pre">call_user_func_array</span></code> 函数的优化版本，当传入的如果是数组时，实际会调用 <code class="docutils literal"><span class="pre">Object::callMethod()</span></code> 方法</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">static invokeStatic($class, $method [, $argv = array()])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>$class</strong> (<em>string</em>) &#8211; 静态方法的类名</li>
+<li><strong>$method</strong> (<em>string</em>) &#8211; 静态方法名</li>
+<li><strong>$argv</strong> (<em>array</em>) &#8211; 传给静态方法的参数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">返回静态方法运行的返回值</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">mix</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>调用指定类的静态方法，而没有访问可见性的限制</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">如果不在类中显示的申明使用  <code class="docutils literal"><span class="pre">Toknot\Boot\ObjectHelper</span></code> 将只能访问 <strong>public</strong> 与 <strong>protected</strong> 方法</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">static callMethod($obj, $method [, $argv = array()])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>$obj</strong> (<em>object</em>) &#8211; 方法所在对象</li>
+<li><strong>$method</strong> (<em>string</em>) &#8211; 调用的方法</li>
+<li><strong>$argv</strong> (<em>array</em>) &#8211; 传给方法的参数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">返回方法运行的返回值</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">mix</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>调用指定对象的方法，而没有访问可见性的限制</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">如果不在类中显示的申明使用  <code class="docutils literal"><span class="pre">Toknot\Boot\ObjectHelper</span></code> 将只能访问 <strong>public</strong> 与 <strong>protected</strong> 方法</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">static constructArgs($className [, $argv = array()])</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$className</strong> (<em>string</em>) &#8211; 类名</li>
+<li><strong>$argv</strong> (<em>array</em>) &#8211; 实例化类时传入的参数</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>用于实例化对象，而只需要传入一个数组参数。本函数无法突破访问可见性。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="invokeMethod">
+<code class="descname">invokeMethod</code><span class="sig-paren">(</span><em>$method</em><span class="optional">[</span>, <em>$argv = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#invokeMethod" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>$method</strong> (<em>string</em>) &#8211; 调用的方法</li>
+<li><strong>$argv</strong> (<em>array</em>) &#8211; 传给方法的参数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">返回方法运行的返回值</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">mix</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>调用自身对象实例的一个方法，而没有访问可见性的限制。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">如果不在类中显示的申明使用  <code class="docutils literal"><span class="pre">Toknot\Boot\ObjectHelper</span></code> 将只能访问 <strong>public</strong> 与 <strong>protected</strong> 方法</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">static __class()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">方法当前调用类的类名字</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>获得当前类的类名字。与 PHP 5.5 的 <code class="docutils literal"><span class="pre">::class</span></code> 魔术常量类似。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>获取类方法名<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>继承 <code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> 的类有可以直接获取到方法名字符串。见以下例子：</p>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Toknot\Boot\Object</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Object</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nx">getValue</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">getStatic</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nx">Foo</span><span class="o">::</span><span class="na">__method</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">;</span> <span class="c1">// 输出 &#39;getValue&#39;</span>
+<span class="k">echo</span> <span class="nx">Foo</span><span class="o">::</span><span class="na">__method</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getStatic</span><span class="p">;</span> <span class="c1">//输出 &#39;getStatic&#39;</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">;</span>
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">__callable</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span> <span class="c1">// 返回 array($obj,&#39;getValue&#39;)</span>
+</pre></div>
+</div>
+<p>以上方法通过 <code class="docutils literal"><span class="pre">Toknot\Boot\MethodHelper</span></code> 实现， 该类无法被继承与直接实例化</p>
+</div>
+<div class="section" id="id4">
+<h2>只读类属性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>Toknot 通过类属性的注释来实现了只读属性控制。需要类申明时继承了 <code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> 时，并且给私有或保护属性添加 <strong>&#64;readonly</strong> 注释，该属性将在类外只能读取，而不能修改其值。例如:</p>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Toknot\Boot\Object</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Object</span> <span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @readonly</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$pro</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @readonly</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$pro2</span> <span class="o">=</span> <span class="s1">&#39;the protected&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">pro</span><span class="p">;</span> <span class="c1">// 输出 1</span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">pro2</span><span class="p">;</span> <span class="c1">//输出 &#39;the protected&#39;</span>
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">pro</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 出现PHP错误</span>
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">pro2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 出现PHP错误</span>
+</pre></div>
+</div>
+<p>只读属性并不会影响 PHP 对象和类的可见性。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">子类如果覆盖了 <code class="docutils literal"><span class="pre">Object::__get($name)</span></code> 方法或者未在该方法中调用 <code class="docutils literal"><span class="pre">parent::__get($name)</span></code> 本特性将无效</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">子类如果实现了 <strong>__set($name, $value)</strong> 方法并且破坏了类方法的访问可见性，本特性无效</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">注释格式必须符合 PHP 文档注释规则</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>单列模式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>在 <code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> 类中， Toknot 实现了一套单列方法。使用如下方法来获得类的单例：</p>
+<dl class="function">
+<dt id="sinlge">
+<code class="descname">sinlge</code><span class="sig-paren">(</span><em>[$param1 [, $param2 ...]</em><span class="sig-paren">)</span><a class="headerlink" href="#sinlge" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<p>例子：</p>
+<div class="highlight-tk"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Toknot\Boot\Object</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Object</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="nx">Foo</span><span class="o">::</span><span class="na">single</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>当传入的参数数目或值发生变化后，类实例将会发生变化。如果未传入参数时，将会获返回最近的一个实例，如果没有将会实现一个无参数实例。</p>
+</div>
+<div class="section" id="id6">
+<h2>迭代器与数组访问<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> 类实现了一个替代器，并且也实现了数组访问。迭代数据通过以下方法设置：</p>
+<dl class="function">
+<dt id="setIteratorArray">
+<code class="descname">setIteratorArray</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setIteratorArray" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="toknot-boot-object">
+<h2><code class="docutils literal"><span class="pre">Toknot\Boot\Object</span></code> 其他实现方法<a class="headerlink" href="#toknot-boot-object" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="paramsHash">
+<code class="descname">paramsHash</code><span class="sig-paren">(</span><em>$param</em><span class="sig-paren">)</span><a class="headerlink" href="#paramsHash" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>$param</strong> (<em>array</em>) &#8211; 需要获得消息摘要的数组</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">消息摘要</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>获取一个数组的消息摘要。返回一个长度为40的字符串</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="__toString">
+<code class="descname">__toString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#__toString" title="永久链接至目标">¶</a></dt>
+<dd><p>本方法将返回类名与当前实例的hash值组成的字符串，类似 <code class="docutils literal"><span class="pre">Foo(#335dfr4sa2s3fdf)</span></code> ，PHP的特性，当直接输出对象时，本函数会被调用</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="__clone">
+<code class="descname">__clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#__clone" title="永久链接至目标">¶</a></dt>
+<dd><p>本方法会复制迭代数组</p>
+</dd></dl>
+
+</div>
 </div>
 
 
