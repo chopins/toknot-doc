@@ -8,7 +8,7 @@ Toknot 框架提供了一组类、方法、函数的访问方法。这些方法�
 
 Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩展。当类继承了 ``Toknot\Boot\Object`` 抽象类后，会获得以下方法：
 
-.. php:method :: static callFunc($callable [, $argv = array() ])
+.. function:: static callFunc($callable [, $argv = array() ])
     
     :param callable $callable: 可调用函数
     :param array $argv: 传给函数的参数
@@ -17,7 +17,7 @@ Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩�
     
     本静态方法是 PHP ``call_user_func_array`` 函数的优化版本，当传入的如果是数组时，实际会调用 ``Object::callMethod()`` 方法
 
-.. php:method :: static invokeStatic($class, $method [, $argv = array()])
+.. function:: static invokeStatic($class, $method [, $argv = array()])
 
     :param string $class: 静态方法的类名
     :param string $method: 静态方法名
@@ -29,7 +29,7 @@ Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩�
     
     .. note :: 如果不在类中显示的申明使用  ``Toknot\Boot\ObjectHelper`` 将只能访问 **public** 与 **protected** 方法
 
-.. php:method :: static callMethod($obj, $method [, $argv = array()])
+.. function:: static callMethod($obj, $method [, $argv = array()])
 
     :param object $obj: 方法所在对象
     :param string $method: 调用的方法
@@ -42,14 +42,14 @@ Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩�
     .. note :: 如果不在类中显示的申明使用  ``Toknot\Boot\ObjectHelper`` 将只能访问 **public** 与 **protected** 方法
     
 
-.. php:method :: static constructArgs($className [, $argv = array()])
+.. function:: static constructArgs($className [, $argv = array()])
 
     :param string $className: 类名
     :param array $argv: 实例化类时传入的参数
     
     用于实例化对象，而只需要传入一个数组参数。本函数无法突破访问可见性。
 
-.. php:method :: invokeMethod($method [,$argv = array()])
+.. function:: invokeMethod($method [,$argv = array()])
 
     :param string $method: 调用的方法
     :param array $argv: 传给方法的参数
@@ -61,7 +61,7 @@ Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩�
     .. note :: 如果不在类中显示的申明使用  ``Toknot\Boot\ObjectHelper`` 将只能访问 **public** 与 **protected** 方法
     
 
-.. php:method :: static __class()
+.. function:: static __class()
 
     :returns: 方法当前调用类的类名字
     :rtype: string
@@ -76,6 +76,7 @@ Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩�
 
 ::
 
+    use Toknot\Boot\Object;
     class Foo extends Object {
         public getValue() {
         }
@@ -98,8 +99,18 @@ Toknot 对于 PHP 的类于方法等语言元素进行了适当的封装和扩�
 Toknot 通过类属性的注释来实现了只读属性控制。需要类申明时继承了 ``Toknot\Boot\Object`` 时，并且给私有或保护属性添加 **@readonly** 注释，该属性将在类外只能读取，而不能修改其值。例如:
 
 ::
+
+    use Toknot\Boot\Object;
     class Foo extends Object {
+    
+        /**
+         * @readonly
+         */
         private $pro = 1;
+        
+        /**
+         * @readonly
+         */
         protected $pro2 = 'the protected';
     }
     
@@ -116,17 +127,20 @@ Toknot 通过类属性的注释来实现了只读属性控制。需要类申明�
 
 .. note :: 子类如果实现了 **__set($name, $value)** 方法并且破坏了类方法的访问可见性，本特性无效
 
+.. note :: 注释格式必须符合 PHP 文档注释规则
+
 单列模式
 ----------------------------------
 
 在 ``Toknot\Boot\Object`` 类中， Toknot 实现了一套单列方法。使用如下方法来获得类的单例：
 
-.. php:method :: sinlge([$param1 [, $param2 ...])
+.. function:: sinlge([$param1 [, $param2 ...])
 
 例子：
 
 ::
     
+    use Toknot\Boot\Object;
     class Foo extends Object {
     }
     
@@ -140,12 +154,12 @@ Toknot 通过类属性的注释来实现了只读属性控制。需要类申明�
 
 ``Toknot\Boot\Object`` 类实现了一个替代器，并且也实现了数组访问。迭代数据通过以下方法设置：
 
-.. php:method :: setIteratorArray([ $data = array()])
+.. function:: setIteratorArray([ $data = array()])
 
 ``Toknot\Boot\Object`` 其他实现方法
 ----------------------------------------------
 
-.. php:method::paramsHash($param)
+.. function:: paramsHash($param)
     
     :param array $param: 需要获得消息摘要的数组
     :returns:  消息摘要
@@ -153,11 +167,11 @@ Toknot 通过类属性的注释来实现了只读属性控制。需要类申明�
     
     获取一个数组的消息摘要。返回一个长度为40的字符串
     
-.. php:method::__toString()
+.. function:: __toString()
 
     本方法将返回类名与当前实例的hash值组成的字符串，类似 ``Foo(#335dfr4sa2s3fdf)`` ，PHP的特性，当直接输出对象时，本函数会被调用
   
-.. php::method::__clone()
+.. function:: __clone()
 
     本方法会复制迭代数组
     

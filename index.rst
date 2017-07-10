@@ -42,6 +42,7 @@ Toknot 用户指南
 ********
 
 .. toctree::
+    :titlesonly:
 	
     doc/tutorial/index
     
@@ -49,6 +50,7 @@ Toknot 用户指南
 类库参考
 *****************
 .. toctree::
+    :titlesonly:
     :maxdepth: 2
 
     doc/libraries/index
@@ -57,6 +59,7 @@ Toknot 用户指南
 数据库参考
 ******************
 .. toctree::
+   :titlesonly:
    :maxdepth: 2
 
    doc/database/index
@@ -66,6 +69,7 @@ Toknot 用户指南
 ****************
 
 .. toctree::
+    :titlesonly:
 
     doc/helpers/index
 
@@ -75,6 +79,7 @@ Toknot 用户指南
 ****************
 
 .. toctree::
+    :titlesonly:
 
     doc/view/index
 

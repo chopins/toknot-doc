@@ -1,10 +1,26 @@
 命令行下参数访问
 ========================
 
-Toknot 框架内核提供了命令行参数访问方法。支持长参数，短参数，以及数字索引。内核提供了以下方法:
+Toknot 框架内核 ``Toknot\Boot\Kernel`` 提供了命令行参数访问方法。支持长参数，短参数，以及数字索引。内核提供了以下方法:
 
-#. ``Kernel::getArg()`` 获取指定参数,参数不存在返回 ``null``
-#. ``Kernel::hasArg()`` 检查参数是否存在，返回 ``boolean`` 值，存在返回 ``true``, 否在 ``false``
+.. class:: Kernel 
+
+   .. function:: getArg([$key = null])
+   
+   :param string $key: 参数名
+   :returns: 参数值
+   :rtype: string 
+  
+   获取指定参数,参数不存在返回 ``null``
+    
+   .. function:: hasArg($key)
+   
+   :param string $key: 参数名
+   :returns: 存在返回 ``true`` 否在 ``false``
+   :rtype: boolean
+   
+   检查参数是否存在，返回 ``boolean`` 值，存在返回 ``true``, 否在 ``false``
+
 
 长参数用法,对于命令： ``php index.php --with-foo=thevalue1  --with-foo2=thevalue2 --with-foo3``
 
